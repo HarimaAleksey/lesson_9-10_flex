@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+    <style>
+        .lights {
+            width: 450px;
+            height: 450px;
+            border: 2px solid black;
+            margin: 0 auto;
+
+            /* создаем флекс контейнер. элементы вложенные на 1-й уровен будут флекс-элем. */
+            display: flex;
+            /* меняет направление главной оси (по умолч. слева-направо) 
+            Примечание: вместе с тем на ее место будет помещена поперечная ось */
+            flex-direction: row;
+            /* выравнивание вдоль главной оси */
+            justify-content: center;
+            /* выравнивание вдоль поперечной оси 
+                stretch - знач. по умолч. растягивает элем. вдоль попереч. оси
+                baseline - выстраивает все элем. по нижней части гарнитуры шрифта
+            */
+            align-items: center;
+        }
+
+        .lights > div {
+            min-width: 80px;
+            min-height: 80px;
+        }
+
+        .red { 
+            /* исп. только для элемента и позволяет задать выравнивание вдоль попереч. оси 
+            изменяя поведение контейнера и его св-ва align-items */
+            align-self: flex-end; 
+            background-color: red; 
+        }
+        .yellow { background-color: yellow;}
+        .green { background-color: green; }
+        .blue { background-color: blue; }
+    </style>
+</head>
+<body>
+    <div class="lights">
+        <div class="red"></div>
+        <div class="yellow"></div>
+        <div class="green"></div>
+        <div class="blue"></div>
+    </div>
+</body>
+</html>
